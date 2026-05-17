@@ -384,7 +384,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
         <option>Vivienda</option><option>Transporte</option><option>Gastos diarios</option>
         <option>Ocio</option><option>Tecnología</option><option>Servicios básicos</option>
         <option>Salud/médicos</option><option>Viajes</option><option>Regalos</option>
-        <option>Educación</option><option>Seguros</option><option>Deuda</option><option>Otros</option>
+        <option>Educación</option><option>Seguros</option><option>Deuda</option><option>Inversiones</option><option>Otros</option>
       </select>
     </div>
     <div id="inc-src" style="display:none">
@@ -422,7 +422,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
       <option>Educación</option><option>Seguros</option><option>Deuda</option>
       <option>Nómina</option><option>Bono productividad</option><option>Décimo</option>
       <option>Inversiones</option><option>Cashback</option><option>Negocio</option>
-      <option>Otros ingresos</option><option>Otros</option>
+      <option>Otros ingresos</option><option>Inversiones (gasto)</option><option>Otros</option>
     </select>
   </div>
   <div class="sh">
@@ -732,15 +732,15 @@ async function cloudDelAcct(id){
 // ═══════════════════════════════════════
 // CONSTANTS
 // ═══════════════════════════════════════
-var CATS={'Vivienda':'🏠','Transporte':'🚗','Gastos diarios':'🛒','Ocio':'🎭','Tecnología':'💻','Servicios básicos':'📱','Salud/médicos':'🏥','Viajes':'✈️','Regalos':'🎁','Educación':'📚','Seguros':'🛡️','Deuda':'💳','Otros':'📦'};
-var CC={'Vivienda':'#4A90D9','Transporte':'#E8844A','Gastos diarios':'#5BAD8B','Ocio':'#9B6DD4','Tecnología':'#3BB8C3','Servicios básicos':'#D4A84A','Salud/médicos':'#E85A5A','Viajes':'#5A78E8','Regalos':'#E85A9B','Educación':'#6DBF5A','Seguros':'#8A8AE8','Deuda':'#C4614A','Otros':'#AAA'};
+var CATS={'Vivienda':'🏠','Transporte':'🚗','Gastos diarios':'🛒','Ocio':'🎭','Tecnología':'💻','Servicios básicos':'📱','Salud/médicos':'🏥','Viajes':'✈️','Regalos':'🎁','Educación':'📚','Seguros':'🛡️','Deuda':'💳','Inversiones':'📊','Otros':'📦'};
+var CC={'Vivienda':'#4A90D9','Transporte':'#E8844A','Gastos diarios':'#5BAD8B','Ocio':'#9B6DD4','Tecnología':'#3BB8C3','Servicios básicos':'#D4A84A','Salud/médicos':'#E85A5A','Viajes':'#5A78E8','Regalos':'#E85A9B','Educación':'#6DBF5A','Seguros':'#8A8AE8','Deuda':'#C4614A','Inversiones':'#00E5A0','Otros':'#AAA'};
 var ISRC=[{k:'Nómina',icon:'💼'},{k:'Bono productividad',icon:'🎯'},{k:'Décimo',icon:'🎄'},{k:'Inversiones',icon:'📈'},{k:'Cashback',icon:'💳'},{k:'Negocio',icon:'🏪'},{k:'Otros ingresos',icon:'💰'}];
 var MO=['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 var FR={monthly:'Monthly',biweekly:'Biweekly',quarterly:'Quarterly',yearly:'Yearly'};
 var SEX=[{c:'Vivienda',m:[553,520,520,520,520,520,520,520,520,520,520,520]},{c:'Transporte',m:[160,127,138,115,30,10,10,10,10,10,10,10]},{c:'Gastos diarios',m:[382,259,648,334,173,10,10,10,10,10,10,10]},{c:'Ocio',m:[577,199,465,393,28,0,0,0,0,0,0,0]},{c:'Tecnología',m:[2,32,409,5,285,19,19,19,19,19,19,19]},{c:'Servicios básicos',m:[30,60,30,30,30,30,30,30,30,30,30,30]},{c:'Viajes',m:[100,24,34,806,0,0,0,0,0,0,0,0]},{c:'Regalos',m:[24,148,43,13,0,0,0,0,0,0,0,0]},{c:'Seguros',m:[438,444,25,0,0,0,0,0,0,0,0,0]},{c:'Deuda',m:[6,91,6,56,121,6,6,6,6,6,6,6]},{c:'Salud/médicos',m:[0,0,0,0,0,0,0,7,0,0,0,0]}];
 var SIN=[{mo:0,s:'Nómina',a:2967,d:'Nómina — enero'},{mo:0,s:'Bono productividad',a:80,d:'Bonificación — enero'},{mo:0,s:'Otros ingresos',a:65,d:'Otros — enero'},{mo:1,s:'Nómina',a:4323,d:'Nómina — febrero'},{mo:1,s:'Bono productividad',a:80,d:'Bonificación — febrero'},{mo:2,s:'Bono productividad',a:80,d:'Bonificación — marzo'},{mo:2,s:'Otros ingresos',a:25,d:'Otros — marzo'},{mo:3,s:'Bono productividad',a:80,d:'Bonificación — abril'},{mo:4,s:'Nómina',a:4073,d:'Nómina — mayo'},{mo:4,s:'Bono productividad',a:80,d:'Bonificación — mayo'},{mo:4,s:'Inversiones',a:100,d:'Intereses — mayo'}];
 var DET={'Vivienda':[['Alquiler',[490,490,490,490,490]],['Mantenimiento',[30,30,30,30,30]],['Muebles',[33,0,0,0,0]]],'Transporte':[['Uber',[146,117,133,110,20]],['Bus',[14,10,5,5,10]]],'Gastos diarios':[['Mercado',[270,201,205,210,121]],['Restaurantes',[28,0,252,100,0]],['Antojos',[67,46,57,24,8]],['Ropa',[0,0,116,0,35]],['Peluquería',[10,10,10,0,10]]],'Ocio':[['Salidas',[354,147,156,211,28]],['Aire libre',[0,0,277,182,0]],['Deporte',[155,6,32,0,0]],['Cine',[68,47,0,0,0]]],'Tecnología':[['Compras internet',[0,30,407,3,266]],['Claude',[0,0,0,0,17]],['Google',[2,2,2,2,2]]],'Servicios básicos':[['Teléfono',[24,24,24,24,24]],['Netflix',[6,36,6,6,6]]],'Viajes':[['Vuelos',[0,0,0,658,0]],['Hoteles',[44,0,0,0,0]],['Comida',[56,24,0,44,0]],['Otros',[0,0,34,104,0]]],'Regalos':[['Regalos',[24,143,43,13,0]],['Donativos',[0,4,0,0,0]]],'Seguros':[['Seguros',[438,444,0,0,0]]],'Deuda':[['Tarjetas',[6,91,6,6,6]],['Impuestos',[0,0,0,50,116]]]};
-var DBG={'Vivienda':527,'Gastos diarios':400,'Ocio':280,'Transporte':100,'Tecnología':50,'Servicios básicos':40,'Viajes':250,'Regalos':80,'Seguros':100,'Deuda':80,'Salud/médicos':30};
+var DBG={'Inversiones':500,'Vivienda':527,'Gastos diarios':400,'Ocio':280,'Transporte':100,'Tecnología':50,'Servicios básicos':40,'Viajes':250,'Regalos':80,'Seguros':100,'Deuda':80,'Salud/médicos':30};
 var DRC=[{id:1,n:'Alquiler',a:490,c:'Vivienda',icon:'🏠',f:'monthly',d:1},{id:2,n:'Teléfono',a:24,c:'Servicios básicos',icon:'📱',f:'monthly',d:1},{id:3,n:'Netflix',a:6,c:'Servicios básicos',icon:'🎬',f:'monthly',d:1},{id:4,n:'Claude',a:17,c:'Tecnología',icon:'💻',f:'monthly',d:1},{id:5,n:'Google',a:2,c:'Tecnología',icon:'🔍',f:'monthly',d:1},{id:6,n:'Peluquería',a:10,c:'Gastos diarios',icon:'✂️',f:'monthly',d:15}];
 var DACCTS=[{id:1,name:'Banco General',bal:3404,type:'savings',color:'#4A90D9'},{id:2,name:'Charles Schwab',bal:3400,type:'broker',color:'#00E5A0'},{id:3,name:'Binance 2',bal:1450,type:'crypto',color:'#F59E0B'},{id:4,name:'BofA',bal:1514.22,type:'checking',color:'#9B6DD4'},{id:5,name:'Binance',bal:500,type:'crypto',color:'#E8844A'}];
 var ACCT_COLORS=['#4A90D9','#00E5A0','#F59E0B','#9B6DD4','#E8844A','#E85A9B','#3BB8C3','#6DBF5A'];
@@ -793,7 +793,7 @@ function onDesc(v){
 }
 async function aiCat(d){
   document.getElementById('ai-ld').classList.add('on');
-  try{var r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:60,system:'Respond ONLY with the exact category name: Vivienda, Transporte, Gastos diarios, Ocio, Tecnología, Servicios básicos, Salud/médicos, Viajes, Regalos, Educación, Seguros, Deuda, Otros.',messages:[{role:'user',content:d}]})});var j=await r.json();var cat=(j.content&&j.content[0]&&j.content[0].text||'').trim();showCat(CATS[cat]?cat:'Otros');}catch(e){document.getElementById('ai-ld').classList.remove('on');showCat('Otros');}
+  try{var r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:60,system:'Respond ONLY with the exact category name: Vivienda, Transporte, Gastos diarios, Ocio, Tecnología, Servicios básicos, Salud/médicos, Viajes, Regalos, Educación, Seguros, Deuda, Inversiones, Otros.',messages:[{role:'user',content:d}]})});var j=await r.json();var cat=(j.content&&j.content[0]&&j.content[0].text||'').trim();showCat(CATS[cat]?cat:'Otros');}catch(e){document.getElementById('ai-ld').classList.remove('on');showCat('Otros');}
 }
 function showCat(cat){curC=cat;document.getElementById('ai-ic').textContent=CATS[cat]||'📦';document.getElementById('ai-nm').textContent=cat;document.getElementById('ai-ld').classList.remove('on');document.getElementById('ai-box').classList.add('on');document.getElementById('catsel-wrap').style.display='none';}
 function showCatSel(){document.getElementById('catsel-wrap').style.display='block';document.getElementById('f-cat').value=curC;}
@@ -1174,3 +1174,5 @@ function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.c
 </script>
 </body>
 </html>
+ 
+
