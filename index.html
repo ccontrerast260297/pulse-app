@@ -18,7 +18,7 @@
 }
 html,body{height:100%;font-family:var(--sans);background:var(--bg);color:var(--text)}
 body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
- 
+
 /* AUTH */
 #auth-screen{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;min-height:100vh}
 .auth-logo{font-family:var(--mono);font-size:32px;font-weight:500;color:var(--green);margin-bottom:8px}
@@ -38,7 +38,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
 .otp-inputs{display:flex;gap:8px;justify-content:center;margin-bottom:16px}
 .otp-digit{width:44px;height:52px;border:1px solid var(--border);border-radius:10px;background:#222;color:var(--text);font-family:var(--mono);font-size:22px;text-align:center;font-weight:500}
 .otp-digit:focus{outline:none;border-color:var(--green)}
- 
+
 /* MAIN APP */
 #app{display:none;flex-direction:column;height:100%}
 .hdr{background:var(--surface);border-bottom:1px solid var(--border);padding:13px 18px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
@@ -56,7 +56,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
 .nb svg{width:20px;height:20px;stroke-width:1.6;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;margin-bottom:1px}
 .nb .d{width:3px;height:3px;border-radius:50%;background:var(--green);opacity:0;margin-top:2px}
 .nb.on .d{opacity:1}
- 
+
 /* CARDS */
 .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:12px}
 .card-g{background:var(--gl);border-color:var(--gm)}
@@ -68,7 +68,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
 .sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
 .sh .t{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .sh .l{font-size:12px;color:var(--green);cursor:pointer;font-weight:500}
- 
+
 /* FORM */
 .trow{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
 .tbtn{padding:10px;border-radius:10px;border:1px solid var(--border);background:transparent;font-family:var(--sans);font-size:14px;color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
@@ -95,7 +95,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
 .dots span:nth-child(2){animation-delay:.15s}.dots span:nth-child(3){animation-delay:.3s}
 .mbtn{width:100%;padding:13px;background:var(--green);color:#0A2A1F;border:none;border-radius:10px;font-family:var(--sans);font-size:15px;font-weight:600;cursor:pointer;margin-top:3px}
 .mbtn:hover{opacity:.88}
- 
+
 /* TX */
 .txlist{display:flex;flex-direction:column;gap:7px}
 .tx{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;cursor:pointer}
@@ -110,9 +110,10 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
 .txdel.on{display:flex}
 .delbtn{flex:1;padding:8px;border-radius:8px;border:1px solid #5A1F1F;background:var(--rl);color:var(--red);font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer}
 .empty{text-align:center;padding:30px 14px;color:var(--muted);font-size:14px;border:1px dashed var(--border);border-radius:12px;line-height:1.8}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:11px}
-.frow select{padding:8px 11px;border:1px solid var(--border);border-radius:10px;background:#222;color:var(--text);font-family:var(--sans);font-size:13px;appearance:none;-webkit-appearance:none;cursor:pointer}
- 
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:11px}
+.frow select,.frow2 select{padding:8px 11px;border:1px solid var(--border);border-radius:10px;background:#222;color:var(--text);font-family:var(--sans);font-size:13px;appearance:none;-webkit-appearance:none;cursor:pointer}
+
 /* REPORTS */
 .tabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:12px;padding-bottom:1px;scrollbar-width:none}
 .tabs::-webkit-scrollbar{display:none}
@@ -152,7 +153,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
 .drill.on{display:block}
 .dr{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #222;font-size:13px}
 .dr:last-child{border-bottom:none}
- 
+
 /* EARNINGS */
 .mg{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin-bottom:8px;overflow:hidden}
 .mgh{padding:13px 15px;display:flex;align-items:center;gap:10px;cursor:pointer}
@@ -176,7 +177,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
 .mgadd{padding:9px 15px}
 .mgaddbtn{width:100%;padding:7px;border-radius:8px;border:1px dashed var(--border);background:transparent;font-family:var(--sans);font-size:13px;color:var(--muted);cursor:pointer}
 .mgaddbtn:hover{border-color:var(--green);color:var(--green)}
- 
+
 /* BUDGETS */
 .gc{background:#1E2235;color:var(--text);border:1px solid #2A3050;border-radius:14px;padding:17px 19px;margin-bottom:12px}
 .gct{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:11px}
@@ -226,7 +227,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
 .beinp{width:100%;padding:9px 11px 9px 25px;border:1px solid var(--border);border-radius:8px;background:#222;color:var(--text);font-family:var(--mono);font-size:15px}
 .beinp:focus{outline:none;border-color:var(--green)}
 .besave{padding:9px 15px;background:var(--green);color:#0A2A1F;border:none;border-radius:8px;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer}
- 
+
 /* RECURRING */
 .ri{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 13px;display:flex;align-items:center;gap:11px;margin-bottom:7px}
 .ric{font-size:18px;width:29px;text-align:center;flex-shrink:0}
@@ -250,7 +251,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
 .rfbtns{display:flex;gap:8px}
 .rfsave{flex:1;padding:9px;background:var(--green);color:#0A2A1F;border:none;border-radius:8px;font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer}
 .rfcancel{padding:9px 13px;border:1px solid var(--border);background:transparent;border-radius:8px;font-family:var(--sans);font-size:13px;color:var(--muted);cursor:pointer}
- 
+
 /* PORTFOLIO */
 .ptotal{background:#1E2235;color:var(--text);border-radius:14px;padding:18px 19px;margin-bottom:12px;border:1px solid #2A3050}
 .pt-lbl{font-size:10px;opacity:.6;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
@@ -289,32 +290,32 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
 .proj-table tr:last-child td{border-bottom:none}
 .proj-table .pval{color:var(--green);font-weight:500}
 .proj-table .pgain{color:var(--muted);font-size:12px}
- 
+
 /* CSV */
 .csvz{border:1.5px dashed var(--border);border-radius:12px;padding:22px 14px;text-align:center;cursor:pointer;transition:all .15s;background:#111}
 .csvz:hover{border-color:var(--green)}
 .csvpr{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #222;font-size:13px;color:var(--text)}
 .csvpr:last-child{border-bottom:none}
 .csvc{width:100%;padding:11px;background:var(--green);color:#0A2A1F;border:none;border-radius:10px;font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;margin-top:11px}
- 
+
 /* SYNC INDICATOR */
 .sync{position:fixed;top:60px;right:50%;transform:translateX(215px);background:#1A1A1A;border:1px solid var(--border);padding:6px 12px;border-radius:20px;font-size:11px;color:var(--muted);opacity:0;transition:opacity .3s;pointer-events:none;font-family:var(--mono);z-index:100}
 .sync.on{opacity:1}
- 
+
 /* TOAST */
 .toast{display:block;width:fit-content;margin:8px auto;background:#1E2235;color:var(--text);border:1px solid #2A3050;padding:9px 16px;border-radius:10px;font-size:13px;font-weight:500;opacity:0;transition:opacity .25s;pointer-events:none;white-space:nowrap}
 .toast.on{opacity:1}
- 
+
 @keyframes bop{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-5px)}}
 </style>
 </head>
 <body>
- 
+
 <!-- ═══ AUTH ═══ -->
 <div id="auth-screen">
   <div class="auth-logo">Pulse</div>
   <div class="auth-tagline">Your finances. Everywhere.</div>
- 
+
   <!-- STEP 1: Email -->
   <div class="auth-card" id="auth-step1">
     <div class="auth-title">Sign in</div>
@@ -324,7 +325,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
     <button class="auth-btn" id="send-btn" onclick="sendOTP()">Send code →</button>
     <div class="auth-note">No account? One will be created automatically.</div>
   </div>
- 
+
   <!-- STEP 2: Magic link sent -->
   <div class="auth-card" id="auth-step2" style="display:none">
     <div style="font-size:32px;text-align:center;margin-bottom:16px">📬</div>
@@ -336,21 +337,22 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
     <div class="auth-back" onclick="backToEmail()">← Use a different email</div>
   </div>
 </div>
- 
+
 <!-- ═══ APP ═══ -->
 <div id="app">
- 
+
 <header class="hdr">
   <div class="logo">Pulse</div>
   <div class="hdr-right">
+    <button class="hdr-btn" onclick="syncNow()" id="sync-btn">⟳ Sync</button>
     <button class="hdr-btn" onclick="exportData()">↓ Export</button>
     <button class="hdr-btn" onclick="signOut()" style="color:var(--red);border-color:#5A1F1F">Sign out</button>
     <div class="badge" id="hdr-d">mayo 2026</div>
   </div>
 </header>
- 
+
 <div id="content">
- 
+
 <!-- REGISTER -->
 <div class="scr on" id="scr-register">
   <div class="card card-g" style="padding:13px 15px">
@@ -399,7 +401,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
   </div>
   <div class="txlist" id="mini-list" style="margin-top:8px"></div>
 </div>
- 
+
 <!-- EXPENSES -->
 <div class="scr" id="scr-expenses">
   <div class="row3">
@@ -420,9 +422,21 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
       <option>Ocio</option><option>Tecnología</option><option>Servicios básicos</option>
       <option>Salud/médicos</option><option>Viajes</option><option>Regalos</option>
       <option>Educación</option><option>Seguros</option><option>Deuda</option>
-      <option>Nómina</option><option>Bono productividad</option><option>Décimo</option>
-      <option>Inversiones</option><option>Cashback</option><option>Negocio</option>
-      <option>Otros ingresos</option><option>Inversiones (gasto)</option><option>Otros</option>
+      <option>Inversiones</option><option>Nómina</option><option>Bono productividad</option><option>Décimo</option>
+      <option>Cashback</option><option>Negocio</option><option>Otros ingresos</option><option>Otros</option>
+    </select>
+  </div>
+  <div class="frow2">
+    <select id="fe-type" onchange="renderExp()" style="background:#222;color:var(--text)">
+      <option value="">All types</option>
+      <option value="expense">Expenses only</option>
+      <option value="income">Income only</option>
+    </select>
+    <select id="fe-sort" onchange="renderExp()" style="background:#222;color:var(--text)">
+      <option value="date-desc">Latest first</option>
+      <option value="date-asc">Oldest first</option>
+      <option value="amt-desc">Amount: high → low</option>
+      <option value="amt-asc">Amount: low → high</option>
     </select>
   </div>
   <div class="sh">
@@ -431,7 +445,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
   </div>
   <div class="txlist" id="full-list" style="margin-top:8px"></div>
 </div>
- 
+
 <!-- REPORTS -->
 <div class="scr" id="scr-reports">
   <div class="tabs">
@@ -447,12 +461,12 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
   <div class="card"><div style="font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:13px">Income vs Expenses 2026</div><div id="bars-w"></div></div>
   <div class="card"><div style="font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:13px">Top categories <span style="font-size:10px;font-weight:400;opacity:.6">(tap for breakdown)</span></div><div id="top-w"></div></div>
 </div>
- 
+
 <!-- EARNINGS -->
 <div class="scr" id="scr-earnings">
   <div class="row3" id="earn-sum"></div>
   <div id="earn-months"></div>
- 
+
   <!-- RESET & REIMPORT -->
   <div class="card" style="margin-top:8px;border-color:#5A4A00">
     <div style="font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin-bottom:8px">⚠ Data Management</div>
@@ -470,7 +484,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
     <div id="csv-prev" style="margin-top:11px"></div>
   </div>
 </div>
- 
+
 <!-- BUDGETS -->
 <div class="scr" id="scr-budgets">
   <div class="gc">
@@ -519,7 +533,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
     <button class="addrec" onclick="showRF(true)">+ Add recurring expense</button>
   </div>
 </div>
- 
+
 <!-- PORTFOLIO -->
 <div class="scr" id="scr-portfolio">
   <div class="ptotal">
@@ -554,9 +568,9 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
     </table>
   </div>
 </div>
- 
+
 </div><!-- end content -->
- 
+
 <nav class="nav">
   <button class="nb on" id="nb-register" onclick="goTo('register')"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>Register<div class="d"></div></button>
   <button class="nb" id="nb-expenses" onclick="goTo('expenses')"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="4" rx="1"/><rect x="3" y="11" width="18" height="4" rx="1"/><rect x="3" y="18" width="11" height="4" rx="1"/></svg>Expenses<div class="d"></div></button>
@@ -564,12 +578,12 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
   <button class="nb" id="nb-earnings" onclick="goTo('earnings')"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Earnings<div class="d"></div></button>
   <button class="nb" id="nb-budgets" onclick="goTo('budgets')"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Budgets<div class="d"></div></button>
 </nav>
- 
+
 </div><!-- end app -->
- 
+
 <div class="sync" id="sync-ind">⟳ Syncing…</div>
 <div class="toast" id="toast"></div>
- 
+
 <script>
 // ═══════════════════════════════════════
 // SUPABASE
@@ -579,7 +593,7 @@ var SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI
 var sb=supabase.createClient(SB_URL,SB_KEY);
 var currentUser=null;
 var authEmail='';
- 
+
 // ═══════════════════════════════════════
 // AUTH
 // ═══════════════════════════════════════
@@ -592,7 +606,7 @@ sb.auth.onAuthStateChange(function(event,session){
     showAuth();
   }
 });
- 
+
 async function sendOTP(){
   var email=(document.getElementById('auth-email').value||'').trim();
   if(!email||!email.includes('@')){toast('Enter a valid email');return;}
@@ -619,7 +633,7 @@ async function signOut(){
   txs=[];bgt=Object.assign({},DBG);goal=0;recs=JSON.parse(JSON.stringify(DRC));accts=JSON.parse(JSON.stringify(DACCTS));
   showAuth();
 }
- 
+
 function showAuth(){
   document.getElementById('auth-screen').style.display='flex';
   document.getElementById('app').style.display='none';
@@ -631,7 +645,7 @@ function showApp(){
   document.getElementById('app').style.height='100%';
   loadAllData();
 }
- 
+
 // ═══════════════════════════════════════
 // DATA LOADING
 // ═══════════════════════════════════════
@@ -679,19 +693,29 @@ async function loadAllData(){
   document.getElementById('bgt-m').value=String(NOW.getMonth());
   renderMini();renderPend();renderGoal();renderBgt();renderRecL();
 }
- 
+
 // ═══════════════════════════════════════
 // CLOUD SAVE FUNCTIONS
 // ═══════════════════════════════════════
 function syncShow(){var s=document.getElementById('sync-ind');s.classList.add('on');setTimeout(function(){s.classList.remove('on');},1500);}
- 
+
+async function syncNow(){
+  var btn=document.getElementById('sync-btn');
+  btn.textContent='⟳ Syncing…';btn.style.color='var(--green)';
+  await loadAllData();
+  btn.textContent='⟳ Sync';btn.style.color='';
+  toast('✓ Synced from cloud');
+}
 async function cloudSaveTx(tx){
-  if(!currentUser)return;
-  syncShow();
-  await sb.from('transactions').upsert({
-    id:tx.id,user_id:currentUser.id,description:tx.desc,amt:tx.amt,tx_date:tx.date,
-    type:tx.type,cat:tx.cat,icon:tx.icon,imported:tx.imported||false
-  });
+  if(!currentUser){toast('⚠ Not signed in — not saved to cloud');return;}
+  try{
+    syncShow();
+    var res=await sb.from('transactions').upsert({
+      id:tx.id,user_id:currentUser.id,description:tx.desc,amt:tx.amt,tx_date:tx.date,
+      type:tx.type,cat:tx.cat,icon:tx.icon,imported:tx.imported||false
+    });
+    if(res.error)throw res.error;
+  }catch(e){toast('⚠ Cloud save failed: '+e.message);console.error('saveTx:',e);}
 }
 async function cloudDelTx(id){
   if(!currentUser)return;
@@ -728,7 +752,7 @@ async function cloudDelAcct(id){
   syncShow();
   await sb.from('accounts').delete().eq('id',id).eq('user_id',currentUser.id);
 }
- 
+
 // ═══════════════════════════════════════
 // CONSTANTS
 // ═══════════════════════════════════════
@@ -745,14 +769,14 @@ var DRC=[{id:1,n:'Alquiler',a:490,c:'Vivienda',icon:'🏠',f:'monthly',d:1},{id:
 var DACCTS=[{id:1,name:'Banco General',bal:3404,type:'savings',color:'#4A90D9'},{id:2,name:'Charles Schwab',bal:3400,type:'broker',color:'#00E5A0'},{id:3,name:'Binance 2',bal:1450,type:'crypto',color:'#F59E0B'},{id:4,name:'BofA',bal:1514.22,type:'checking',color:'#9B6DD4'},{id:5,name:'Binance',bal:500,type:'crypto',color:'#E8844A'}];
 var ACCT_COLORS=['#4A90D9','#00E5A0','#F59E0B','#9B6DD4','#E8844A','#E85A9B','#3BB8C3','#6DBF5A'];
 var ACCT_TYPES={broker:'Brokerage',crypto:'Crypto',savings:'Savings',checking:'Checking',other:'Other'};
- 
+
 // ═══════════════════════════════════════
 // STATE
 // ═══════════════════════════════════════
 var txs=[],bgt=Object.assign({},DBG),goal=0,recs=JSON.parse(JSON.stringify(DRC)),accts=JSON.parse(JSON.stringify(DACCTS));
 var per='all',openTx=null,openDrl=null,openBgt=null,openAcct=null,curT='expense',curC='',aiTmr=null,csvRows=[];
 var NOW=new Date();
- 
+
 // ═══════════════════════════════════════
 // NAVIGATION
 // ═══════════════════════════════════════
@@ -769,7 +793,7 @@ function goTo(s){
   if(s==='earnings')renderEarn();
   if(s==='budgets'){renderGoal();renderBgt();renderRecL();}
 }
- 
+
 // ═══════════════════════════════════════
 // FORM
 // ═══════════════════════════════════════
@@ -798,7 +822,7 @@ async function aiCat(d){
 function showCat(cat){curC=cat;document.getElementById('ai-ic').textContent=CATS[cat]||'📦';document.getElementById('ai-nm').textContent=cat;document.getElementById('ai-ld').classList.remove('on');document.getElementById('ai-box').classList.add('on');document.getElementById('catsel-wrap').style.display='none';}
 function showCatSel(){document.getElementById('catsel-wrap').style.display='block';document.getElementById('f-cat').value=curC;}
 function pickCat(v){if(v)showCat(v);}
- 
+
 async function guardar(){
   var desc=(document.getElementById('f-desc').value||'').trim();
   var amt=parseFloat(document.getElementById('f-amt').value);
@@ -818,7 +842,7 @@ function resetForm(){
   document.getElementById('catsel-wrap').style.display='none';document.getElementById('inc-src').style.display='none';
   curC='';curT='expense';document.getElementById('btn-e').className='tbtn e';document.getElementById('btn-i').className='tbtn';
 }
- 
+
 // ═══════════════════════════════════════
 // TRANSACTIONS
 // ═══════════════════════════════════════
@@ -839,16 +863,38 @@ function togTx(id){openTx=openTx===id?null:id;renderMini();if(document.getElemen
 async function delTx(id){txs=txs.filter(function(t){return t.id!==id;});openTx=null;renderMini();renderExp();renderGoal();await cloudDelTx(id);toast('Transaction deleted');}
 function renderMini(){var el=document.getElementById('mini-list');if(!el)return;var r=txs.slice(0,3);el.innerHTML=r.length?r.map(txH).join(''):'<div class="empty">📋<br>No transactions yet</div>';}
 function renderExp(){
-  var fm=(document.getElementById('fe-m')||{}).value||'';var fc=(document.getElementById('fe-c')||{}).value||'';
-  var f=txs.filter(function(t){var d=new Date((t.date||'2026-01-01')+'T12:00:00');if(fm&&MO[d.getMonth()]!==fm)return false;if(fc&&(t.cat||t.category||'')!==fc)return false;return true;});
-  var exp=0,inc=0;f.forEach(function(t){var a=parseFloat(t.amt||t.amount)||0;if(t.type==='expense')exp+=a;else inc+=a;});
+  var fm=(document.getElementById('fe-m')||{}).value||'';
+  var fc=(document.getElementById('fe-c')||{}).value||'';
+  var ftype=(document.getElementById('fe-type')||{}).value||'';
+  var fsort=(document.getElementById('fe-sort')||{}).value||'date-desc';
+  var f=txs.filter(function(t){
+    var d=new Date((t.date||'2026-01-01')+'T12:00:00');
+    if(fm&&MO[d.getMonth()]!==fm)return false;
+    if(fc&&(t.cat||t.category||'')!==fc)return false;
+    if(ftype&&t.type!==ftype)return false;
+    return true;
+  });
+  // Sort
+  f=f.slice().sort(function(a,b){
+    var aa=parseFloat(a.amt||a.amount)||0,ba=parseFloat(b.amt||b.amount)||0;
+    if(fsort==='date-desc')return(b.date||'').localeCompare(a.date||'');
+    if(fsort==='date-asc')return(a.date||'').localeCompare(b.date||'');
+    if(fsort==='amt-desc')return ba-aa;
+    if(fsort==='amt-asc')return aa-ba;
+    return 0;
+  });
+  var exp=0,inc=0;
+  f.forEach(function(t){var a=parseFloat(t.amt||t.amount)||0;if(t.type==='expense')exp+=a;else inc+=a;});
   var bal=inc-exp;
-  document.getElementById('se-exp').textContent='$'+fmt(exp);document.getElementById('se-inc').textContent='$'+fmt(inc);
-  var be=document.getElementById('se-bal');be.textContent=(bal>=0?'+':'-')+'$'+fmt(Math.abs(bal));be.style.color=bal>=0?'var(--green)':'var(--red)';
+  document.getElementById('se-exp').textContent='$'+fmt(exp);
+  document.getElementById('se-inc').textContent='$'+fmt(inc);
+  var be=document.getElementById('se-bal');
+  be.textContent=(bal>=0?'+':'-')+'$'+fmt(Math.abs(bal));
+  be.style.color=bal>=0?'var(--green)':'var(--red)';
   document.getElementById('tx-cnt').textContent=f.length+' transaction'+(f.length!==1?'s':'');
   document.getElementById('full-list').innerHTML=f.length?f.map(txH).join(''):'<div class="empty">🔍<br>No results</div>';
 }
- 
+
 // ═══════════════════════════════════════
 // REPORTS
 // ═══════════════════════════════════════
@@ -902,7 +948,7 @@ function renderTop(){
   }).join('');
 }
 function togDrl(cat){openDrl=openDrl===cat?null:cat;renderTop();}
- 
+
 // ═══════════════════════════════════════
 // EARNINGS
 // ═══════════════════════════════════════
@@ -921,7 +967,7 @@ async function resetAndReimport(){
   renderMini();renderPend();renderGoal();renderBgt();renderEarn();
   toast('✓ Data reimported successfully!');
 }
- 
+
 function renderEarn(){
   var it=txs.filter(function(t){return t.type==='income';});
   var ty=it.reduce(function(s,t){return s+(parseFloat(t.amt||t.amount)||0);},0);
@@ -947,7 +993,7 @@ function renderEarn(){
 function togMg(i){var b=document.getElementById('mgb-'+i);if(b)b.classList.toggle('on');}
 async function delIT(id){txs=txs.filter(function(t){return t.id!==id;});renderEarn();renderGoal();await cloudDelTx(id);toast('Income deleted');}
 function qaI(mi){goTo('register');setType('income');document.getElementById('f-date').value='2026-'+String(mi+1).padStart(2,'0')+'-01';setTimeout(function(){document.getElementById('f-amt').focus();},100);}
- 
+
 // ═══════════════════════════════════════
 // GOAL
 // ═══════════════════════════════════════
@@ -962,7 +1008,7 @@ function renderGoal(){
 }
 function toggleGForm(){var f=document.getElementById('gform');f.classList.toggle('on');if(f.classList.contains('on')){document.getElementById('ginp').value=goal||'';setTimeout(function(){document.getElementById('ginp').focus();},50);}}
 async function saveGoal(){var v=parseFloat(document.getElementById('ginp').value);if(!v||v<=0){toast('Enter a valid goal');return;}goal=v;document.getElementById('gform').classList.remove('on');renderGoal();await cloudSaveGoal(v);toast('✓ Goal saved');}
- 
+
 // ═══════════════════════════════════════
 // AI BUDGET REC
 // ═══════════════════════════════════════
@@ -977,7 +1023,7 @@ async function getAIRec(){
     o.innerHTML='<div style="font-size:13px;line-height:1.8">'+txt.replace(/\n/g,'<br>')+'</div>';
   }catch(e){o.innerHTML='<div style="color:var(--muted);font-size:13px">Connection error.</div>';}
 }
- 
+
 // ═══════════════════════════════════════
 // BUDGETS
 // ═══════════════════════════════════════
@@ -1006,7 +1052,7 @@ function renderBgt(){
 }
 function togBgt(cat){openBgt=openBgt===cat?null:cat;renderBgt();if(openBgt){var sid=cat.replace(/\W/g,'_');setTimeout(function(){var e=document.getElementById('bi_'+sid);if(e)e.focus();},50);}}
 async function savBgt(cat){var sid=cat.replace(/\W/g,'_');var e=document.getElementById('bi_'+sid);var v=parseFloat(e?e.value:'');if(!v||v<=0){toast('Invalid amount');return;}bgt[cat]=v;openBgt=null;renderBgt();await cloudSaveBgt(cat,v);toast('✓ Budget updated');}
- 
+
 // ═══════════════════════════════════════
 // RECURRING
 // ═══════════════════════════════════════
@@ -1051,7 +1097,7 @@ async function saveRec(){
   showRF(false);document.getElementById('rf-n').value='';document.getElementById('rf-a').value='';
   renderRecL();renderPend();await cloudSaveRec(r);toast('✓ '+n+' added');
 }
- 
+
 // ═══════════════════════════════════════
 // PORTFOLIO
 // ═══════════════════════════════════════
@@ -1099,7 +1145,7 @@ function renderProj(){
   });
   document.getElementById('proj-body').innerHTML=rows;
 }
- 
+
 // ═══════════════════════════════════════
 // IMPORT
 // ═══════════════════════════════════════
@@ -1123,7 +1169,7 @@ async function doImport(){
   var arows=DACCTS.map(function(a){return{id:a.id,user_id:uid,name:a.name,bal:a.bal,type:a.type,color:a.color};});
   await sb.from('accounts').upsert(arows);
 }
- 
+
 // ═══════════════════════════════════════
 // CSV IMPORT
 // ═══════════════════════════════════════
@@ -1153,7 +1199,7 @@ async function confCSV(){
   csvRows=[];document.getElementById('csv-prev').innerHTML='<div style="color:var(--green);font-size:13px;text-align:center;padding:12px">✓ '+newTxs.length+' imported</div>';
   renderMini();renderGoal();toast('✓ CSV imported');
 }
- 
+
 // ═══════════════════════════════════════
 // EXPORT
 // ═══════════════════════════════════════
@@ -1164,7 +1210,7 @@ function exportData(){
   var csv=rows.join('\n'),blob=new Blob([csv],{type:'text/csv;charset=utf-8;'}),url=URL.createObjectURL(blob),a=document.createElement('a');
   a.href=url;a.download='pulse_'+new Date().toISOString().slice(0,10)+'.csv';a.click();URL.revokeObjectURL(url);toast('✓ CSV exported');
 }
- 
+
 // ═══════════════════════════════════════
 // UTILS
 // ═══════════════════════════════════════
@@ -1174,5 +1220,3 @@ function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.c
 </script>
 </body>
 </html>
- 
-
