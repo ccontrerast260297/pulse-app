@@ -50,7 +50,7 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
 #content{flex:1;overflow-y:auto}
 .scr{display:none;padding:14px}
 .scr.on{display:block}
-.nav{background:var(--surface);border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(6,1fr);flex-shrink:0}
+.nav{background:var(--surface);border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(5,1fr);flex-shrink:0}
 .nb{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 2px 7px;cursor:pointer;border:none;background:none;color:var(--muted);font-family:var(--sans);font-size:10px;font-weight:500;line-height:1;transition:color .15s}
 .nb.on{color:var(--green)}
 .nb svg{width:20px;height:20px;stroke-width:1.6;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;margin-bottom:1px}
@@ -452,6 +452,13 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
 <div class="scr" id="scr-earnings">
   <div class="row3" id="earn-sum"></div>
   <div id="earn-months"></div>
+ 
+  <!-- RESET & REIMPORT -->
+  <div class="card" style="margin-top:8px;border-color:#5A4A00">
+    <div style="font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin-bottom:8px">⚠ Data Management</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.6">If your data looks wrong or empty, tap below to clear everything and reimport your Sheet data fresh.</div>
+    <button onclick="resetAndReimport()" style="width:100%;padding:11px;border-radius:10px;border:1px solid #5A4A00;background:#1A1500;color:var(--amber);font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer">↺ Reset & reimport my data</button>
+  </div>
   <div class="card" style="margin-top:8px">
     <div style="font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:13px">Import from CSV</div>
     <div class="csvz" onclick="document.getElementById('csv-fi').click()" ondragover="event.preventDefault()" ondrop="dropCSV(event)">
@@ -556,7 +563,6 @@ body{max-width:430px;margin:0 auto;display:flex;flex-direction:column}
   <button class="nb" id="nb-reports" onclick="goTo('reports')"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 20 9 4 6 12 2 12"/></svg>Reports<div class="d"></div></button>
   <button class="nb" id="nb-earnings" onclick="goTo('earnings')"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Earnings<div class="d"></div></button>
   <button class="nb" id="nb-budgets" onclick="goTo('budgets')"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Budgets<div class="d"></div></button>
-  <button class="nb" id="nb-portfolio" onclick="goTo('portfolio')"><svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>Portfolio<div class="d"></div></button>
 </nav>
  
 </div><!-- end app -->
@@ -762,7 +768,6 @@ function goTo(s){
   if(s==='reports')renderRep();
   if(s==='earnings')renderEarn();
   if(s==='budgets'){renderGoal();renderBgt();renderRecL();}
-  if(s==='portfolio'){renderPortfolio();renderProj();}
 }
  
 // ═══════════════════════════════════════
@@ -901,6 +906,22 @@ function togDrl(cat){openDrl=openDrl===cat?null:cat;renderTop();}
 // ═══════════════════════════════════════
 // EARNINGS
 // ═══════════════════════════════════════
+async function resetAndReimport(){
+  if(!currentUser)return;
+  var uid=currentUser.id;
+  toast('Clearing data…');
+  // Delete all imported transactions
+  await sb.from('transactions').delete().eq('user_id',uid).eq('imported',true);
+  await sb.from('settings').upsert({user_id:uid,goal:goal,imported:false});
+  // Reset local state
+  txs=txs.filter(function(t){return!t.imported;});
+  // Reimport
+  await doImport();
+  // Reload
+  renderMini();renderPend();renderGoal();renderBgt();renderEarn();
+  toast('✓ Data reimported successfully!');
+}
+ 
 function renderEarn(){
   var it=txs.filter(function(t){return t.type==='income';});
   var ty=it.reduce(function(s,t){return s+(parseFloat(t.amt||t.amount)||0);},0);
